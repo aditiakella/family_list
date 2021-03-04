@@ -32,11 +32,15 @@ family = Family_dict["people"]
 for person in family:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
+
+
+
 # prepare list for JSON, this can be sent via a browser
 json_family = json.dumps(Family_dict)
 # the result is a JSON file:
+# prints title of list
 print("JSON Family Members")
-# Prints Family members from JSon
+# Prints Family members from JSON
 print(type(json_family))
 family = json.dumps(Family_dict["people"])
 print(json_family)
@@ -45,6 +49,9 @@ family = x["people"]
 for person in family:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
+
+
+
 # unwind family members back to JSON
 Family_dict = json.loads(json_family)
 print("JSON Dictionary of Family Members")
@@ -52,38 +59,48 @@ print("JSON Dictionary of Family Members")
 print(type(Family_dict))
 x = json.loads(json_family)
 family = x["people"]
+# defines an empty list
 parents = []
+# defines an empty list
 children = []
 for person in family:
     if "parent" in person:
+        # if parent = True, then the person is added to the end of the list called parents
         parents.append(person)
-    else:
+    elif "child" in person:
+        # if child = True, then the person is added to the end of the list called children
         children.append(person)
+# prints list of family members and their info
 for person in family:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
 
+
+# prints title
 print("Parents")
+# prints list called parents
 print(parents)
 print()
+# prints a column of people who are in list called parents
 for person in parents:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
-
-
-
+# prints title of list
 print("Children")
+# prints list called children
 print(children)
 print()
+# prints a column of people who are in list called parents
 for person in children:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
 
+
+# defines an empty list
 employed = []
+# defines an empty list
 school = []
-
 print("Education or Work")
-
 for person in family:
     if "employed" in person:
         employed.append(person)
