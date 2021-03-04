@@ -5,11 +5,15 @@ p2 = { "name":"Vidya", "age":48, "fav_city":"Reykjavik", "birthplace":"Bangalore
 p3 = { "name":"Satvik", "age":13, "fav_city":"Banff", "birthplace":"San Diego", "child":True, "school":True}
 p4 = { "name":"Aditi", "age": 16, "fav_city": "Whistler", "birthplace":"San Diego", "child":True, "school":True}
 p5 = { "name":"Lalita", "age":70, "fav_city":"Bangalore", "birthplace":"Tamilnadu", "parent":True}
+
 # a list of family members' dictionaries
-family_members = [p1, p2, p3, p4]
-# prints list of family members and their info
+family_members = [p1, p2, p3, p4, p5]
+
+# Prints title of list
 print("List of Family Members")
+# prints data type of family members list
 print(type(family_members))
+# prints list of family members and their info
 print(family_members)
 for person in family_members:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
@@ -18,9 +22,11 @@ print()
 
 # turn list to dictionary of family members
 Family_dict = {'people': family_members}
+# Prints title of Dictionary of Family Members
 print("Dictionary of Family Members")
-# Prints Dictionary of Family Members
+# Prints data type of Dictionary of Family Members
 print(type(Family_dict))
+# Prints Dictionary of Family Members
 print(Family_dict)
 family = Family_dict["people"]
 for person in family:
