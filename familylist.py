@@ -100,21 +100,29 @@ print()
 employed = []
 # defines an empty list
 school = []
-print("Education or Work")
+
 for person in family:
+    # if employed = True, then the person is added to the end of the list called employed
     if "employed" in person:
         employed.append(person)
+    # if school = True, then the person is added to the end of the list called school
     elif "school" in person:
         school.append(person)
 print()
+# prints title of employed table
 print("Employed")
+# prints list called employed
 print(employed)
 print()
+# prints column of people that are in employed list
 for person in employed:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
+# prints title of school table
 print("School")
+# prints list called school
 print(school)
+# prints column of people that are in school list
 for person in school:
     print(person['name'] + "," + str(person['age']) + "," + person['fav_city'] + "," + person['birthplace'])
 print()
